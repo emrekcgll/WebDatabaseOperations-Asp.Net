@@ -1,0 +1,20 @@
+﻿@model WebBookshelf.Models.Category
+
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="UpdateCategory" asp-controller="Category" method="post" class="form-group">
+    <div class="form-control">
+        <label class="label label-info">Kategori Id: @Model.CategoryId</label>
+        <input class="form-control" type="hidden" name="CategoryId" value="@Model.CategoryId" />
+        <br />
+        <label>Kategori Adı:</label>
+        <input class="form-control" type="text" name="CategoryName" value="@Model.CategoryName" />
+        <br />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Değişikliği Kaydet</button>
+</form>
+

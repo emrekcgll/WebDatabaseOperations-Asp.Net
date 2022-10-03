@@ -1,0 +1,16 @@
+﻿@model WebBookshelf.Models.Category
+
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div class="form-control">
+        <label>Kategori Adı:</label>
+        <input class="form-control" type="text" name="CategoryName" />
+        <br />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

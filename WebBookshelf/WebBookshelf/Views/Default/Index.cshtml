@@ -1,0 +1,34 @@
+﻿@using WebBookshelf.Models
+@model List<Book>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kitap Adı</th>
+        <th>Yazar</th>
+        <th>Tür</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BookId</td>
+            <td>@item.BookName</td>
+            <td>@item.BookWriterName</td>
+            <td>@item.Category.CategoryName</td>
+
+            <td><a href="/Default/UpdateBook/@item.BookId" class="btn btn-success btn-block">Güncelle</a></td>
+            <td><a href="/Default/DeleteBook/@item.BookId" class="btn btn-danger btn-block">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Default/AddBook/" class="btn btn-primary">Kitap Ekle</a>
+
+

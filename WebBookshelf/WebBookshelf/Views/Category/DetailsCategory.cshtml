@@ -1,0 +1,24 @@
+﻿@using WebBookshelf.Models
+@model List<Book>
+
+@{
+    ViewData["Title"] = "DetailsCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.v1 Kategorisindeki Kitaplar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kitap Adı</th>
+        <th>Yazar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BookId</td>
+            <td>@item.BookName</td>
+            <td>@item.BookWriterName</td>
+        </tr>
+    }
+</table>

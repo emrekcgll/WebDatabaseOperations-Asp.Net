@@ -1,0 +1,27 @@
+﻿@using WebBookshelf.Models
+@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryId</td>
+            <td>@item.CategoryName</td>
+            <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-success btn-block">Güncelle</a></td>
+            <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger btn-block">Sil</a></td>
+            <td><a href="/Category/DetailsCategory/@item.CategoryId" class="btn btn-info btn-block">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Category/AddCategory/" class="btn btn-primary">Kategori Ekle</a>
+

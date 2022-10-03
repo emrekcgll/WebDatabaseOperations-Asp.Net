@@ -1,0 +1,23 @@
+﻿@model WebBookshelf.Models.Book
+
+@{
+    ViewData["Title"] = "UpdateBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="UpdateBook" asp-controller="Default" method="post" class="form-group">
+    <div class="form-control">
+        <label class="label label-info">Kitap Id: @Model.BookId</label>
+        <input class="form-control" type="hidden" name="BookId" value="@Model.BookId" />
+        <br />
+        <label>Kitap Adı:</label>
+        <input class="form-control" type="text" name="BookName" value="@Model.BookName" />
+        <br />
+        <label>Yazar:</label>
+        <input class="form-control" type="text" name="BookWriterName" value="@Model.BookWriterName" />
+        <label>Kategori:</label>
+        @Html.DropDownListFor(x => x.Category.CategoryId, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Değişikliği Kaydet</button>
+</form>

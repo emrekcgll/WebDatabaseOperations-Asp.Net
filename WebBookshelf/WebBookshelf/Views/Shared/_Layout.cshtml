@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="~/Layout/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Layout/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Layout/css/animate.css" rel="stylesheet">
+    <link href="~/Layout/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    @*<li>
+                            <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="index.html">Dashboard v.1</a></li>
+                                <li><a href="dashboard_2.html">Dashboard v.2</a></li>
+                                <li><a href="dashboard_3.html">Dashboard v.3</a></li>
+                                <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                                <li><a href="dashboard_5.html">Dashboard v.5 </a></li>
+                            </ul>
+                        </li>*@
+                    <li>
+                        <a href="/Default/Index/"><i class="fa fa-th-large"></i> <span class="nav-label">Kitaplar</span></a>
+                    </li>
+                    <li>
+                        <a href="/Category/Index/"><i class="fa fa-th-large"></i> <span class="nav-label">Kategoriler</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" action="search_results.html">
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            @RenderBody()
+            <div class="footer">
+                <div class="float-right">
+                    @DateTime.Now.ToString("f")
+                </div>
+                <div>
+                    <strong>Copyright</strong> KOCOGLU Company &copy; 2014-2018
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mainly scripts -->
+    <script src="~/Layout/js/jquery-3.1.1.min.js"></script>
+    <script src="~/Layout/js/popper.min.js"></script>
+    <script src="~/Layout/js/bootstrap.js"></script>
+    <script src="~/Layout/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Layout/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="~/Layout/js/inspinia.js"></script>
+    <script src="~/Layout/js/plugins/pace/pace.min.js"></script>
+</body>
+</html>
